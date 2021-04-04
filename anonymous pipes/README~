@@ -1,0 +1,45 @@
+========================================================================
+Autor: Radoslaw Nowak,                               Krakow, 24.04.2019
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog programy zawiera trzy  programy do 2 zadan napisane w jezyku C:
+--------------------------------------------------------------------
+
+I.  Program ktory zajmuje sie przechwytywaniem i obsluga sygnalow, jest wyposazony w 3 tryby obslugi - domyslna,ignorowanie sygnalow i obsluge
+    wykonywana przez funkcje zdefiniowana przez uzytkownika. Program zawiera obsluge bledow.
+II. Program ktory uruchamia program z podpunktu pierwszego za pomoca funkcji execl i wysyla do niego sygnaly za pomoca funkcji kill.
+
+III.Program tworzy proces potomny, a nastepnie tworzy w nim kilka kolejnych procesow potomnych uruchamiajacych program z podpunktu pierwszego.
+    Pierwszy proces potomny staje sie liderem grupy skladajacej sie z wszystkich procesow potomnych, po utworzeniu grupy procesow
+    program sprawdza, czy fakty istnieje oraz wysyla do niej sygnaly przy pomocy funkcji kill. Lider grupy ignoruje te sygnaly.
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby skompilowac programy nalezy wykonac komende:
+	make all
+
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       ./obsluga.x [tryb] [numer sygnalu]
+
+-> Aby uruchomic 2-gi program, nalezy wykonac komende
+       ./execobs.x [tryb] [numer sygnalu]
+-> Aby uruchomic 3-ci program, nalezy wykonac komende
+       ./grupa.x [tryb] [numer sygnalu]
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================:
+

@@ -1,0 +1,38 @@
+========================================================================
+Autor: Radoslaw Nowak,                               Krakow, 08.05.2019
+========================================================================
+
+* Zawartosc:
+============
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+*Jak uruchomic programy?
+========================
+-> Aby skompilowac programy nalezy wykonac komende:
+	make all
+
+-> Aby uruchomic program bez uzycia komendy mkfifo w terminalu, nalezy wykonac komende:
+       make run1;
+
+-> Aby uruchomic program z uzyciem komendy mkfifo w terminalu, nalezy wykonac komendy:
+       mkfifo nazwa_fifo
+       ./fifo.x nazwa_fifo
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================:
+
+Zadanie 1: fifo.c
+
+Zadanie 1:
+a) Program za pomocą funkcji mkfifo() tworzy potok nienazwany. Następnie zostaje rozdzielony na dwa procesy przy użyciu funkcji
+fork(). Proces potomny uruchamia program producent.c przy pomocy funkcji execl(), a proces macierzysty uruchamia program konsument.c Proces potomny odczytuje dane z pliku wejscia za pomoca funkcji read() i umieszcza je w buforze, a nastepnie zapisuje ja do potoku za pomoca funkcji write(). Proces macierzysty analogicznie pobiera dane z potoku a nastepnie zapisuje je w pliku wyjscia. Program jest wyposazony w obsluge bledow.
+
+
+

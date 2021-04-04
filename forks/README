@@ -1,0 +1,42 @@
+##########################################################################
+Autor: Radoslaw Nowak					Krakow, 13.03.2019 
+##########################################################################
+* Zawartosc:
+============
+Katalog zawiera piec programow wykonujacych polecenia zawarte w cwiczeniu
+-------------------------------------------------------------------------
+I. Program wypisuje identyfikatory danego procesu.
+
+II. Program trzykrotnie wywoluje funkcje fork i wypisuje identyfikatory 
+    procesu macierzystego i wszystkich procesow potomnych
+
+III. Program robi z procesow potomnych procesy zombie, ktore nastepnie
+     sa adoptowane przez init
+
+IV. Program wypisuje identyfikatory procesow w kolejnosci
+    od najstarszego do najmlodszego
+
+V. Program sprawia, ze kazdy proces potomny staje sie liderem wlasnej grupy procesow
+-------------------------------------------------------------------------
+*Jak uruchomic programy?
+========================
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run1
+
+-> Aby uruchomic 2-gi program, nalezy wykonac komende:
+    	make run2
+
+-> Aby uruchomic 3-ci program, nalezy wykonac komende:
+    	make run3
+
+-> Aby uruchomic 4-ty program, nalezy wykonac komende:
+    	make run4
+
+-> Aby uruchomic 5-gi program, nalezy wykonac komende:
+    	make run5
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar

@@ -1,0 +1,62 @@
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <sys/wait.h>
+
+int main()
+{
+ 
+  char* bufor;	
+  int i;
+  int fd[2];
+  if(pipe(fd)==-1)
+    {
+      perror("pipe error");
+      exit(1);
+    }
+  switch(fork())
+    {
+    case -1:
+      perror("fork error");
+      exit(1);
+   
+    case 0:
+      close(fd[1]);	
+      i=open("./wejscie.txt", O_RDONLY);
+      printf("pobieram surowce z pliku wejscie.txt i wstawiam je do potoku \n");
+      if(read(i, bufor, 60)==-1)
+	{
+	  perror("read error");
+	  exit(1);
+	}
+      if(close(i)==-1)
+	{
+	  perror("close error");
+	  exit(1);
+	}
+    default:
+
+      if(wait(NULL)==-1)
+	{
+	  perror("wait error"); 
+	  exit(1);
+	}
+      close(fd[0]);	
+      i=open("./wyjscie.txt", O_WRONLY | O_CREAT | O_TRUNC);
+      printf("pobieram towar z potoku i umieszczam go w pliku wyjscie.txt \n");
+      if(write(i, bufor, 60)==-1)
+	{
+	  perror("write error");
+	  exit(1);
+	}
+      if(close(i)==-1)
+	{
+	  perror("close error");
+	  exit(1);
+	}
+
+    }
+  return 0;
+}

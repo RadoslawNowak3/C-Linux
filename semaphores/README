@@ -1,0 +1,37 @@
+========================================================================
+Autor: Radoslaw Nowak,                               Krakow, 29.05.2019
+========================================================================
+
+* Zawartosc:
+============
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+*Jak uruchomic programy?
+========================
+-> Aby skompilowac programy nalezy wykonac komende:
+	make all
+
+-> Aby uruchomic program nalezy wykonac komendy:
+      ./powielanie.x [ilosc procesow] [ilosc sekcji krytycznych]
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================:
+
+Zadanie 1: sem.c, sem.h
+
+Zadanie 1:
+Biblioteka wyposazona w obsluge bledow zawierajaca metody do wykonywania dzialan na semaforach(tworzenie, otwieranie, uzy-
+skiwanie wartosci, operowanie, zamykanie i usuwanie semaforow)
+
+Zadanie 2: sem.c sem.h powielanie.c sekcja.c
+
+Zadanie 2: 
+powielacz.c: program sluzacy do powielania procesow realizujacych wzajemne wykluczanie
+sekcja.c: program realizujacy wzajemne wykluczanie procesow korzystajac z biblioteki z zadania 1 oraz danych przekazanych przez powielacz.

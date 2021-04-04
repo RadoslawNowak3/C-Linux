@@ -1,0 +1,26 @@
+##########################################################################
+Autor: Radoslaw Nowak					Krakow, 20.03.2019 
+##########################################################################
+* Zawartosc:
+============
+Katalog zawiera jeden program wykonujacy polecenie zawarte w cwiczeniu
+-------------------------------------------------------------------------
+1. Program przy uzyciu funkcji fork i exec wypisuje identyfikatory procesow
+-------------------------------------------------------------------------
+*Jak uruchomic programy?
+========================
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       make run1
+
+-> Aby uruchomic 2-gi program, nalezy wykonac komende:
+    	make run2
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+*Pytania
+========
+1.Ile procesow powstanie przy n-krotnym wywolaniu funkcji fork-exec i dlaczego??
+- Ilosc powstalych procesow jest zalezna od liczby wywolan funkcji poniewaz exec inicjuje tylko proces macierzysty i nie wywoluje procesow potomnych.

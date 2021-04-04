@@ -1,0 +1,34 @@
+========================================================================
+Autor: Radoslaw Nowak,                               Krakow, 24.04.2019
+========================================================================
+
+* Zawartosc:
+============
+
+Katalog zawiera 1 program zadan napisane w jezyku C:
+--------------------------------------------------------------------
+
+I.  Program tworzy potok przy pomocy funkcji pipe oraz za pomoca funkcji fork tworzy proces potomny. Nastepnie proces potomny przyjmuje role producenta i po odczytaniu danych z pliku wejscie.txt przesyla je do potoku, a proces macierzysty przyjmuje role konsumenta i pobiera dane z potoku i zapisuje je w pliku wyjscie.txt
+
+------------------------------------------------------------------------
+
+* Jak uruchomic programy:
+=========================
+
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby skompilowac programy nalezy wykonac komende:
+	make all
+
+-> Aby uruchomic 1-szy program, nalezy wykonac komende:
+       ./potokinie.x lub make run1
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================:
+

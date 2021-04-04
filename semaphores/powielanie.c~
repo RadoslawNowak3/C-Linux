@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <semaphore.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include "sem.h"
+
+int main(int argc, char *argv[])
+{
+  if(argc!=3)
+  {
+    printf("Niepoprawna liczba argumentow\n");
+    printf("Przyklad wywolania \n");
+    printf("./powielanie.x 4 3\n");
+    exit(EXIT_FAILURE);
+  }
+  int i;
+  int j;
+  int pid;
+  int ilosc=atoi(argv[1]);
+  int sk = atoi(argv[2]);
+  sem_t *semafor;
+  semafor = semCreate("/mysem");
+  for(i=0;i<ilosc;i++)
+    {
+      switch(pid=fork())
+	{
+	case -1:
+	  perror("Fork error\n");
+	  exit(EXIT_FAILURE);
+	  break;
+	case 0:
+	  execl("./sekcja.x","sekcja.x","/mysem",sk,NULL);
+	  perror("Execl error\n");
+	  break;
+	default:
+	  break;
+	}
+	
+    }
+  for(j=0;j<ilosc;j++)
+    {
+      wait(NULL);
+    }
+  semClose(semafor);
+  semRemove("mysem");
+  return 0;
+}
+			
+		
+	
+		
+	
+

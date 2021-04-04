@@ -1,0 +1,32 @@
+========================================================================
+Autor: Radoslaw Nowak,                               Krakow, 01.05.2019
+========================================================================
+
+* Zawartosc:
+============
+Katalog zawiera program Makefile do kompilacji, linkowania
+i uruchamiania powyzszych programow, a takze czyszczenia katalogu 
+i jego archiwizacji.
+
+-> Aby skompilowac programy nalezy wykonac komende:
+	make all
+
+-> Aby uruchomicprogram, nalezy wykonac komende:
+       ./potoki.x nazwa pliku wejsciowego nazwa pliku wejsciowego
+
+-> Aby wyczyscic zawartosc katalogu (usunac zbedne pliki), nalezy wykonac:
+       make clean
+
+-> W celu archiwizacji oraz kompresji katalogu nalezy wykonac:
+       make tar
+
+========================================================================:
+
+Zadanie 1: potoki.c
+
+Zadanie 1: Program za pomocą funkcji pipe() tworzy potok nienazwany. Następnie zostaje rozdzielony na dwa procesy przy użyciu funkcji
+for(). Proces potomny pobiera dane z istniejacego pliku wejscia i zapisuje je do potoku przy użyciu funkcji write(). Z kolei proces macierzysty
+pobiera dane z potoku i zapisuje do pliku wyjscia(tworzy nowy lub zapisuje do juz istniejacego). Program jest wyposazony w obsluge bledow, wszystkie deskryptory i strumienie plikowe zostają zamknięte w celu uniknięcia wycieków danych.
+
+
+

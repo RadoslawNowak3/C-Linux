@@ -1,0 +1,9 @@
+sem_t* semOpen(const char *nazwa);
+sem_t* semCreate(const char *nazwa);
+void semRemove(const char *nazwa);
+void semP(sem_t *semafor);
+void semV(sem_t *semafor);
+int semInfo(sem_t *semafor);
+int semClose(sem_t *semafor);
+// semInit(sem_t *semafor);
+
